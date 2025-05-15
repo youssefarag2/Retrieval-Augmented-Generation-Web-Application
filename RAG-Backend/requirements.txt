@@ -1,0 +1,33 @@
+# requirements.txt
+
+fastapi
+uvicorn[standard]
+sqlalchemy
+python-dotenv
+passlib[bcrypt] # Includes bcrypt
+python-jose[cryptography] # For JWT
+python-multipart
+
+# LangChain Core & Integrations
+langchain
+langchain-core
+langchain-chroma # For ChromaDB integration
+langchain-community # For loaders, splitters etc. (Ensure HuggingFaceEmbeddings is accessible if needed, but we will mainly rely on sentence-transformers via langchain-huggingface)
+langchain-google-genai # For Gemini LLM
+langchain-huggingface # Recommended way for HuggingFace Embeddings
+
+# Jina V3 & Dependencies
+sentence-transformers
+transformers
+torch
+einops
+numpy<2 # <-- Important constraint from Jina V3 docs!
+
+# Document Loaders
+pypdf
+python-docx # For Docx2txtLoader
+# Add others if needed, e.g., unstructured
+
+# Optional (but good practice)
+coloredlogs # Often used by libraries like onnxruntime, good to have consistent logging
+humanfriendly # Dependency for coloredlogs
