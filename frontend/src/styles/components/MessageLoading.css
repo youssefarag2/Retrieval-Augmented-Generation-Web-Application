@@ -1,0 +1,6 @@
+@import '../App.css';
+
+div.loader {
+    @apply w-4 bg-c2 aspect-square rounded-full animate-pulse;
+    animation-duration: 0.75s;
+}

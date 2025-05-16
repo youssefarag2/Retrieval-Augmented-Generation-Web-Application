@@ -1,0 +1,91 @@
+@import '../App.css';
+
+nav#root-nav {
+    @apply relative h-(--nav-height) bg-white w-full border-b-2 border-b-c1/25 flex justify-center;
+
+    div.container {
+        @apply justify-between p-0;
+
+        div.left {
+            @apply w-24 px-2 flex items-center;
+
+            img {
+                @apply w-full;
+            }
+        }
+
+        div.right {
+            @apply flex justify-end;
+
+            div.logged-in {
+                @apply h-full w-28 flex flex-col items-center justify-center px-2 gap-1;
+
+                * {
+                    @apply leading-tight;
+                }
+
+                h1 {
+                    @apply w-full text-center truncate;
+                }
+
+                h2 {
+                    @apply text-c3/25;
+                }
+
+                button {
+                    @apply underline cursor-pointer;
+                }
+            }
+
+            button.open-dropdown {
+                @apply w-24 h-full flex items-center justify-center gap-2 cursor-pointer;
+                @apply hover:bg-c2 hover:*:invert-100;
+
+                p {
+                    @apply leading-tight font-bold text-black;
+                }
+
+                img {
+                    @apply object-contain;
+                }
+            }
+
+            button.open-notifications {
+                @apply relative w-12 h-full flex items-center justify-center gap-2 cursor-pointer;
+
+                &:hover {
+                    img {
+                        @apply bg-c2 invert-100;
+                    }
+                }
+
+                img {
+                    @apply object-contain w-10 p-1 rounded-full;
+                }
+
+                p {
+                    @apply absolute leading-tight bg-blue-300 w-4 aspect-square top-9 right-2;
+                    @apply flex items-center justify-center rounded-full font-bold;
+                }
+            }
+
+            div.dropdown {
+                @apply absolute left-0 top-(--nav-height) w-full flex flex-col gap-2 p-2 bg-white border-b-2 border-b-c1/25;
+
+                * {
+                    @apply leading-tight w-full text-center rounded-lg py-1;
+                    @apply hover:bg-c2 hover:text-white hover:font-bold;
+                }
+            }
+
+            div.notifications-dropdown {
+                @apply absolute rounded-b-xl not-sm:w-full not-sm:left-0 top-(--nav-height) flex flex-col gap-2 p-2 bg-white border-t-0 border-2 border-c1/25;
+                @apply max-h-96 overflow-y-auto;
+
+                p.empty {
+                    @apply opacity-25;
+                }
+            }
+        }
+    }
+}

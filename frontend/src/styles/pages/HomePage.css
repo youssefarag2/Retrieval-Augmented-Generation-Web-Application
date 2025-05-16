@@ -1,0 +1,40 @@
+@import '../App.css';
+
+body:has(div#home-page) {
+    @apply bg-gradient-to-b from-white to-c4;
+
+    div#home-page {
+        @apply grid grid-cols-2 not-sm:grid-cols-1;
+
+        div.left,
+        div.right {
+            @apply flex justify-center;
+        }
+
+        div.left {
+            @apply flex-col gap-2;
+
+            h1 {
+                @apply text-3xl font-poppins-black not-sm:text-center;
+            }
+
+            a.chat-link {
+                @apply w-fit bg-c2 px-4 py-2 rounded-lg font-bold text-white;
+            }
+
+            p.login-or-signup {
+                a {
+                    @apply underline font-extrabold;
+                }
+            }
+        }
+
+        div.right {
+            @apply items-center not-sm:hidden;
+
+            div {
+                @apply w-86;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import '../App.css';
+
+nav#auth-nav {
+    @apply h-(--nav-height) bg-white w-full flex justify-center;
+
+    div.container {
+        @apply p-0;
+
+        div {
+            @apply w-24 px-2 flex items-center;
+
+            img {
+                @apply w-full;
+            }
+        }
+    }
+}

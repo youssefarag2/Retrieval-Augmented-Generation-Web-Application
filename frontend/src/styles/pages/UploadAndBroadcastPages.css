@@ -1,0 +1,60 @@
+@import '../App.css';
+
+div#upload-page {
+    @apply flex flex-col gap-2 justify-center items-center;
+
+    h1 {
+        @apply leading-tight text-3xl font-bold;
+
+        &.embedding-effect,
+        &.sending-effect {
+            @apply animate-pulse;
+        }
+    }
+
+    h2 {
+        @apply leading-tight font-bold;
+    }
+
+    form {
+        @apply w-fit max-w-full flex flex-col items-center gap-4;
+
+        div.drag-and-drop-area {
+            @apply max-w-full w-120 h-60 border-2 border-dashed border-c2/50 rounded-2xl;
+            @apply flex flex-col px-2 text-center gap-2 items-center justify-center cursor-pointer;
+
+            img {
+                @apply w-20 grayscale-100 opacity-50;
+            }
+
+            p {
+                @apply leading-tight text-c2/75 text-xl select-none;
+            }
+
+            input[type='file'] {
+                @apply hidden;
+            }
+        }
+
+        textarea {
+            @apply max-w-full w-120 h-60 border-2 border-c2/50 rounded-2xl resize-none outline-none p-3 duration-150;
+            @apply focus:placeholder:text-c2/25 focus:shadow-lg;
+        }
+
+        div.levels-container {
+            @apply flex gap-2 flex-wrap justify-center;
+
+            label {
+                @apply w-fit flex gap-2;
+
+                input[type='radio'] {
+                    @apply accent-c2;
+                }
+            }
+        }
+
+        button {
+            @apply w-fit bg-c2 px-4 py-2 rounded-lg font-bold text-white cursor-pointer;
+        }
+    }
+}

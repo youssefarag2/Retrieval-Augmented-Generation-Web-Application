@@ -1,0 +1,73 @@
+@import '../../App.css';
+
+div#login-page,
+div#signup-page {
+    @apply flex items-center;
+
+    form {
+        @apply max-w-4/5 min-w-2/5 flex flex-col gap-4 items-center;
+
+        h1 {
+            @apply leading-tight text-3xl font-bold;
+        }
+
+        input[type='text'],
+        input[type='password'],
+        button {
+            @apply max-w-full w-90 py-2 rounded-lg duration-150;
+        }
+
+        input[type='text'],
+        input[type='password'] {
+            @apply outline outline-c2/50 px-3;
+            @apply focus:outline-c8/25 focus:placeholder:text-c2/25 focus:outline-2 focus:shadow-lg;
+
+            &.input-error {
+                @apply outline-red-500;
+            }
+        }
+
+        p {
+            &.error-message {
+                @apply text-red-500;
+            }
+        }
+
+        button {
+            @apply bg-c8 text-white cursor-pointer;
+            @apply hover:brightness-105 active:brightness-95;
+        }
+
+        div.password-container {
+            @apply relative flex items-center;
+
+            img {
+                @apply bg-white h-full p-2 absolute right-0 rounded-lg cursor-pointer;
+            }
+        }
+
+        div.levels-container {
+            @apply flex gap-2 flex-wrap justify-center;
+
+            label {
+                @apply w-fit flex gap-2;
+
+                input[type='radio'] {
+                    @apply accent-c2;
+                }
+            }
+        }
+
+        div.links-container {
+            @apply flex gap-2;
+
+            * {
+                @apply leading-tight text-c2/75 text-sm;
+            }
+
+            p {
+                @apply select-none;
+            }
+        }
+    }
+}

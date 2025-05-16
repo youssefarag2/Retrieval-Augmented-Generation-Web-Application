@@ -1,0 +1,17 @@
+@import '../App.css';
+
+div.chat-input {
+    @apply relative h-12 w-full flex items-center;
+
+    input {
+        @apply h-full w-full outline-none rounded-3xl bg-c6 px-4 pr-12;
+    }
+
+    button {
+        @apply absolute right-2 h-8 aspect-square rounded-full bg-c2 flex p-2;
+
+        img {
+            @apply invert-100;
+        }
+    }
+}

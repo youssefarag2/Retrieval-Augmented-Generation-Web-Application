@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../public/assets/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Black';
+    src: url('../../public/assets/fonts/Poppins-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('../../public/assets/fonts/Rubik-VariableFont_wght.ttf');
+}
+
+@theme {
+    /* Heights */
+    --nav-height: 6.875rem;
+    --footer-height: 22rem;
+
+    /* Widths */
+    --sidebar-width: 20rem;
+
+    /* Fonts */
+    --font-rubik: 'Rubik';
+    --font-poppins: 'Poppins';
+    --font-poppins-black: 'Poppins Black';
+
+    /* Colors */
+    --color-c1: #9cabc2;
+    --color-c2: #757575;
+    --color-c3: #1b1717;
+    --color-c4: #66bcff;
+    --color-c5: #959595;
+    --color-c6: #d9d9d9;
+    --color-c7: #313131;
+    --color-c8: #3d7199;
+}
+
+@layer base {
+    :lang(ar) {
+        @apply font-rubik text-right;
+    }
+
+    :root {
+        @apply font-poppins text-c7;
+    }
+}

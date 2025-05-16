@@ -1,0 +1,30 @@
+@import '../App.css';
+
+body:has(div#terms-of-use-page, div#privacy-policy-page) {
+    @apply bg-gradient-to-b from-white to-c4;
+
+    div#terms-of-use-page,
+    div#privacy-policy-page {
+        @apply w-full flex items-center py-8;
+
+        h1 {
+            @apply font-poppins-black text-5xl bg-gradient-to-r from-c8 to-c3 bg-clip-text text-transparent;
+        }
+
+        ul {
+            @apply list-decimal px-10 flex flex-col gap-1;
+
+            li.ul-child {
+                @apply font-extrabold mt-4;
+            }
+
+            p {
+                @apply -ml-3;
+            }
+
+            ol {
+                @apply list-disc pl-4;
+            }
+        }
+    }
+}

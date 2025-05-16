@@ -1,0 +1,37 @@
+@import '../App.css';
+
+body:has(div#about-page) {
+    @apply bg-gradient-to-b from-white to-c4;
+
+    div#about-page {
+        @apply w-full flex items-center gap-5 py-8;
+
+        h1 {
+            @apply font-poppins-black text-5xl bg-gradient-to-r from-c8 to-c3 bg-clip-text text-transparent;
+        }
+
+        div {
+            @apply rounded-2xl overflow-hidden;
+
+            img {
+                @apply w-fit;
+            }
+        }
+
+        div.about-us-content {
+            @apply w-4/6 not-lg:w-full flex flex-col gap-8 px-4 mt-8;
+
+            section {
+                @apply flex flex-col gap-2;
+
+                h2 {
+                    @apply font-poppins-black text-3xl;
+                }
+
+                ul {
+                    @apply list-disc pl-8;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@import '../../App.css';
+
+div#chat-page {
+    @apply h-140;
+
+    &:has(div.chat-with-history) {
+        @apply grid grid-rows-[90%_10%];
+    }
+
+    &:has(div.first-message) {
+        @apply flex flex-col gap-4 items-center justify-center;
+    }
+
+    div.chat-with-history {
+        @apply flex flex-col gap-2 p-2 overflow-y-auto;
+    }
+
+    div.first-message {
+        h1 {
+            @apply leading-tight font-bold text-4xl;
+        }
+    }
+
+    form.chat-with-history {
+        @apply w-full;
+    }
+
+    form.first-message {
+        @apply w-2/3 not-sm:w-full;
+    }
+
+    p.login-or-signup {
+        a {
+            @apply underline font-extrabold;
+        }
+    }
+}

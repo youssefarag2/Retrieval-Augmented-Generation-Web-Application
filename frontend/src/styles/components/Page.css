@@ -1,0 +1,5 @@
+@import '../App.css';
+
+div.page {
+    @apply w-full min-h-140 flex flex-col;
+}

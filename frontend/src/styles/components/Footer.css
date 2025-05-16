@@ -1,0 +1,70 @@
+@import '../App.css';
+
+footer {
+    @apply bg-c3 w-full h-(--footer-height);
+
+    div.container {
+        @apply w-full grid grid-rows-[85%_15%];
+
+        div.top,
+        div.bottom {
+            @apply px-4;
+        }
+
+        div.top {
+            @apply py-4 border-b-2 border-b-c2/25 grid sm:grid-cols-2 not-sm:grid-rows-2;
+
+            div.left {
+                div {
+                    @apply w-28;
+                }
+            }
+
+            div.right {
+                @apply flex flex-col gap-2;
+
+                * {
+                    @apply text-white;
+                }
+
+                h1 {
+                    @apply leading-tight text-2xl font-poppins-black;
+                }
+
+                div {
+                    @apply flex flex-col gap-2;
+
+                    a {
+                        @apply w-fit flex gap-2;
+                    }
+                }
+            }
+        }
+
+        div.bottom {
+            @apply flex items-center sm:justify-between not-sm:justify-center not-sm:flex-col not-sm:gap-2;
+
+            * {
+                @apply text-center font-bold not-sm:text-sm;
+            }
+
+            div.left {
+                p {
+                    @apply leading-tight text-white;
+                }
+            }
+
+            div.right {
+                @apply flex gap-2;
+
+                * {
+                    @apply leading-tight text-white;
+                }
+
+                p {
+                    @apply font-normal select-none;
+                }
+            }
+        }
+    }
+}

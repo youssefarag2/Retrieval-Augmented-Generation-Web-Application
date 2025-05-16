@@ -1,0 +1,46 @@
+@import '../App.css';
+
+div.chat-message-user,
+div.chat-message-ai {
+    @apply bg-c6 w-fit max-w-3/7 not-sm:max-w-full px-4 py-2 rounded-lg flex flex-col gap-2;
+
+    * {
+        @apply leading-tight w-full;
+    }
+
+    div.sender {
+        @apply font-bold truncate;
+    }
+
+    div.message {
+        @apply whitespace-pre-wrap break-words;
+
+        * {
+            @apply leading-tight inline;
+        }
+    }
+
+    div.timestamp {
+        @apply text-black/25 text-right text-sm;
+    }
+
+    span.blinking-cursor {
+        @apply inline ml-1;
+        animation: blink 1s step-start infinite;
+    }
+}
+
+div.chat-message-user {
+    @apply self-end ml-auto;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}

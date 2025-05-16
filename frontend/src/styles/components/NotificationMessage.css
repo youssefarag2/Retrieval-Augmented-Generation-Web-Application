@@ -1,0 +1,25 @@
+@import '../App.css';
+
+div.notification-message {
+    @apply flex justify-between w-full gap-4 p-2 rounded-lg bg-c1/25;
+
+    div.info {
+        @apply flex flex-col gap-2;
+
+        h1 {
+            @apply font-bold leading-tight text-xs;
+        }
+
+        p {
+            @apply max-w-36 leading-tight text-sm wrap-break-word text-wrap;
+        }
+    }
+
+    button {
+        @apply flex gap-2 w-fit bg-c2 p-1 rounded-lg cursor-pointer;
+
+        img {
+            @apply invert-100;
+        }
+    }
+}

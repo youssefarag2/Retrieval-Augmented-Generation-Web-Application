@@ -1,0 +1,25 @@
+@import '../App.css';
+
+body:has(div#page-not-found-page) {
+    @apply bg-c5;
+
+    div#page-not-found-page {
+        @apply text-white items-center justify-center gap-6;
+
+        div {
+            @apply flex flex-col items-center gap-2 *:text-center;
+
+            h1 {
+                @apply text-8xl font-poppins-black not-sm:text-6xl;
+            }
+
+            h3 {
+                @apply text-2xl font-poppins-black not-sm:text-xl;
+            }
+        }
+
+        a {
+            @apply w-fit bg-c2 px-4 py-2 rounded-lg font-bold text-white;
+        }
+    }
+}

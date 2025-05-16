@@ -19,6 +19,7 @@ from .db import database, models
 from .core.config import settings
 # --- MODIFIED: Import the new notifications router ---
 from .routers import auth, admin, query, notifications # Added notifications
+from fastapi.middleware.cors import CORSMiddleware
 
 # --- FastAPI Application Instance ---
 app = FastAPI(
@@ -26,6 +27,24 @@ app = FastAPI(
     description="API for document RAG, user auth, query access control, and notifications.",
     version="0.6.0" # Bump version
 )
+
+# --- NEW: CORS Middleware Configuration ---
+# Define the list of origins that are allowed to make cross-origin requests.
+# Replace "http://localhost:5173" with the actual origin of your frontend application.
+# You can use ["*"] to allow all origins, but this is less secure for production.
+origins = [
+    "http://localhost:5173", # Your frontend's origin
+    # Add other origins if needed, e.g., your production frontend URL
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # List of origins that are allowed to make requests
+    allow_credentials=True, # Allow cookies to be included in requests
+    allow_methods=["*"],    # Allow all methods (GET, POST, PUT, DELETE, etc.)
+    allow_headers=["*"],    # Allow all headers
+)
+# --- End of CORS Middleware Configuration ---
 
 # --- Exception Handlers (Keep as is) ---
 @app.exception_handler(RequestValidationError)
