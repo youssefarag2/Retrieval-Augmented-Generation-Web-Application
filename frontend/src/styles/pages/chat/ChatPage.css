@@ -1,4 +1,4 @@
-@import '../../App.css';
+/* @import '../../App.css';
 
 div#chat-page {
     @apply h-140;
@@ -29,6 +29,76 @@ div#chat-page {
         @apply w-2/3 not-sm:w-full;
     }
 
+    p.login-or-signup {
+        a {
+            @apply underline font-extrabold;
+        }
+    }
+} */
+
+@import '../../App.css'; /* Your global styles and Tailwind base */
+
+div#chat-page {
+    /*
+      MODIFIED:
+      - mx-auto: Centers the block horizontally.
+      - w-full: Ensures it takes up available width up to its max-width.
+      - max-w-2xl: Sets a maximum width. You can adjust this to other Tailwind sizes
+                   like max-w-xl, max-w-3xl, max-w-4xl, etc., to find what looks best.
+                   This is the key to making the chat area narrower.
+      - h-140: Your existing height. Consider if this height is sufficient for the
+               entire chat interface (messages + input). You might want something
+               like h-screen and then manage internal heights, or a vh unit.
+               For now, we'll keep your h-140.
+    */
+    @apply h-140 mx-auto w-full max-w-4xl; /* <--- MODIFIED HERE */
+
+    /* This condition applies when there's chat history */
+    &:has(div.chat-with-history) {
+        @apply grid grid-rows-[auto_min-content]; /* Changed grid to allow chat history to take available space */
+        /* and input to take its natural height */
+        /* This assumes your input area is the second direct child */
+    }
+
+    /* This condition applies when it's the first message (no history) */
+    &:has(div.first-message) {
+        @apply flex flex-col gap-4 items-center justify-center;
+    }
+
+    /* This is the container for the actual chat messages */
+    div.chat-with-history {
+        /*
+          - overflow-y-auto: Allows scrolling if messages exceed the container height.
+          - No changes needed here if #chat-page is correctly constrained.
+          - The 90% height was removed because the grid on #chat-page now handles sizing.
+            This div will now take the 'auto' part of the grid row sizing.
+        */
+        @apply flex flex-col gap-2 p-2 overflow-y-auto;
+    }
+
+    /* Styles for the initial "What's on your mind?" message */
+    div.first-message {
+        h1 {
+            @apply leading-tight font-bold text-4xl;
+        }
+    }
+
+    /* Styles for the input form when there's chat history */
+    form.chat-with-history {
+        /*
+          - w-full: The form will take the full width of its parent (which is #chat-page, now constrained).
+          - The 10% height was removed, it will take min-content height from the grid.
+        */
+        @apply w-full p-2; /* Added some padding for the form area */
+    }
+
+    /* Styles for the input form when it's the first message */
+    form.first-message {
+        /* This will also be constrained by the max-width of #chat-page */
+        @apply w-2/3 sm:w-1/2; /* Made it a bit narrower relative to the centered #chat-page */
+    }
+
+    /* Styles for a login/signup prompt (if you have one) */
     p.login-or-signup {
         a {
             @apply underline font-extrabold;
